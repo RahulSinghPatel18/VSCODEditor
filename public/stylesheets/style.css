@@ -1,0 +1,209 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Gilroy";
+    box-sizing: border-box;
+  }
+  
+  html,body{
+    width: 100%;
+    height: 100%;
+  }
+  
+  #main{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #ffff;
+  }
+  
+  #left{
+    padding: 30px;
+    width: 25%;
+    height: 100%;
+    background-color: #f3f3f3;
+  }
+  
+  #folder{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #icons{
+    display: flex;
+    gap: 15px;
+  }
+  #icons i {
+font-size: 18px;
+  }
+
+
+  #icons a{
+    text-decoration: none;
+    color: #000;
+  }
+  
+  #files{
+    margin-top: 30px;
+  }
+  
+  .file{
+    padding: 10px 10px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .file a{
+    color: #000;
+    text-decoration: none;
+    font-weight: 800;
+  }
+  
+  .file:hover{
+    background-color: #ebebeb;
+  }
+  
+  .ficons{
+    display: flex;
+    gap: 10px;
+  }
+  
+  .file .ficons i{
+    opacity: 0;
+  }
+  
+  .file:hover i{
+    opacity: 1;
+  }
+  
+  #right{
+    width: 75%;
+    height: 100%;
+    background-color: #FFF;
+  }
+  
+  
+  #right small{
+    opacity: .3;
+    font-weight: 600;
+  }
+  
+  .fileform{
+    display: none;
+    width: 100%;
+  }
+  
+  .fileform form{
+    width: 100%;
+  }
+  
+  .fileform form input{
+    width: 70%;
+    outline-color: royalblue;
+    padding: 10px 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+  }
+  
+  .folderform{
+    display: none;
+    width: 100%;
+  }
+  
+  .folderform form{
+    width: 100%;
+  }
+  
+  .folderform form input{
+    width: 70%;
+    outline-color: royalblue;
+    padding: 10px 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+  }
+  
+  #rheader{
+    width: 100%;
+  }
+  
+  #rheader .opened{
+    font-weight: 600;
+    width: fit-content;
+    padding: 20px 30px;
+    background-color: #dadada;
+  }
+  
+  .opened i{
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  #right h3{
+    padding: 20px;
+  }
+  
+  #content{
+    width: 100%;
+    height: 90%;
+  }
+  
+  #content textarea{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 26px;
+    font-family: consolas;
+  }
+  
+  #overlay{
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.469);
+    width: 100%;
+    height: 100%;
+  }
+  
+  #popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  #popup h3{
+    font-weight: 600;
+    margin-bottom: 10px;
+    opacity: .7;
+  }
+  
+  #popup input{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 12px 12px;
+    border: 1px solid #ec5489;
+    border-radius: 5px;
+   
+  }
+  #popup button{
+    border: 1px solid #363736;
+    padding: 12px 12px;
+   background-color: #62feb8;
+   color: black;
+   font-size: 17px;
+   border-radius: 7px;
+  }

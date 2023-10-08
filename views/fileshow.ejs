@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sasta VS Code</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+    <div id="main">
+      <div id="left">
+        <div id="folder">
+          <h4>Some Folder</h4>
+          <div id="icons">
+            <i id="fileicon" class="ri-file-line"></i>
+            <i id="foldericon" class="ri-folder-add-line"></i>
+            <a href="/"><i class="ri-refresh-line"></i></a>
+            <i class="ri-file-copy-line"></i>
+          </div>
+        </div>
+        <div class="form fileform">
+          <form action="/filecreate">
+            <input type="text" name="filename" placeholder="filename">
+          </form>
+        </div>
+
+        <div class="form folderform">
+          <form action="/foldercreate">
+            <input type="text" name="foldername" placeholder="foldername">
+          </form>
+        </div>
+        
+        <div id="files">
+          <% files.forEach(function(elem){ %>
+            <div class="file">
+              <a href="/file/<%= elem.name %>">
+                  <% if(elem.isDirectory()){ %>
+                    <i class="ri-folder-line"></i>
+                  <% } else { %>
+                    <i class="ri-file-line"></i>
+                  <% } %>
+                  <%= elem.name %>
+              </a>
+              <div class="ficons">
+                <i class="ri-pencil-line"></i>
+                <i class="ri-delete-bin-5-line"></i>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+      <div id="right">
+        <div id="rheader">
+          <div class="opened">
+            <%= filename %>
+            <i class="ri-close-line"></i>
+          </div>
+        </div>
+        <form id="content" action="">
+          <textarea name="filedata"><%= data %></textarea>
+        </form>
+      </div>
+    </div>
+
+    <script>
+
+      function donoOffKaro(){
+        document.querySelectorAll(".form")
+        .forEach(function(form){
+          form.style.display = "none";
+        })
+      }
+
+      var openedstatefileform = 0;
+      var openedstatefolderform = 0;
+      document.querySelector("#fileicon")
+      .addEventListener("click", function(){
+        donoOffKaro();
+        if(openedstatefileform === 0){
+          document.querySelector(".fileform").style.display = "initial";
+          openedstatefileform = 1;
+        }
+        else{
+          document.querySelector(".fileform").style.display = "none";
+          openedstatefileform = 0;
+        }
+      })
+
+      document.querySelector("#foldericon")
+      .addEventListener("click", function(){
+        donoOffKaro();
+        if(openedstatefolderform === 0){
+          document.querySelector(".folderform").style.display = "initial";
+          openedstatefolderform = 1;
+        }
+        else{
+          document.querySelector(".folderform").style.display = "none";
+          openedstatefolderform = 0;
+        }
+      })
+    </script>
+</body>
+</html>
